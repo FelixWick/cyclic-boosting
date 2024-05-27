@@ -9,8 +9,8 @@ from cyclic_boosting import (
     CBGBSRegressor,
     CBMultiplicativeQuantileRegressor,
     CBAdditiveQuantileRegressor,
-    CBMultiplicativeGenericCRegressor,
-    CBAdditiveGenericCRegressor,
+    CBMultiplicativeGenericRegressor,
+    CBAdditiveGenericRegressor,
     CBGenericClassifier,
     binning,
 )
@@ -153,7 +153,7 @@ def pipeline_CB(
             aggregate=aggregate,
             quantile=quantile,
         )
-    elif estimator in [CBMultiplicativeGenericCRegressor, CBAdditiveGenericCRegressor, CBGenericClassifier]:
+    elif estimator in [CBMultiplicativeGenericRegressor, CBAdditiveGenericRegressor, CBGenericClassifier]:
         estimatorCB = estimator(
             feature_groups=feature_groups,
             hierarchical_feature_groups=hierarchical_feature_groups,
@@ -247,18 +247,18 @@ def pipeline_CBAdditiveQuantileRegressor(**kwargs):
     return pipeline_CB(CBAdditiveQuantileRegressor, **kwargs)
 
 
-def pipeline_CBMultiplicativeGenericCRegressor(**kwargs):
+def pipeline_CBMultiplicativeGenericRegressor(**kwargs):
     """
-    Convenience function containing CBMultiplicativeGenericCRegressor (estimator) + binning.
+    Convenience function containing CBMultiplicativeGenericRegressor (estimator) + binning.
     """
-    return pipeline_CB(CBMultiplicativeGenericCRegressor, **kwargs)
+    return pipeline_CB(CBMultiplicativeGenericRegressor, **kwargs)
 
 
-def pipeline_CBAdditiveGenericCRegressor(**kwargs):
+def pipeline_CBAdditiveGenericRegressor(**kwargs):
     """
-    Convenience function containing CBAdditiveGenericCRegressor (estimator) + binning.
+    Convenience function containing CBAdditiveGenericRegressor (estimator) + binning.
     """
-    return pipeline_CB(CBAdditiveGenericCRegressor, **kwargs)
+    return pipeline_CB(CBAdditiveGenericRegressor, **kwargs)
 
 
 def pipeline_CBGenericClassifier(**kwargs):
