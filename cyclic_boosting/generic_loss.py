@@ -609,7 +609,7 @@ def check_y_classification(y: np.ndarray) -> None:
         )
 
 
-class CBMultiplicativeGenericCRegressor(CBGenericLoss, sklearn.base.RegressorMixin, LogLinkMixin):
+class CBMultiplicativeGenericRegressor(CBGenericLoss, sklearn.base.RegressorMixin, LogLinkMixin):
     """
     Multiplicative regression mode allowing an arbitrary loss function to be
     minimized in each feature bin.This should be used for non-negative target
@@ -674,7 +674,7 @@ class CBMultiplicativeGenericCRegressor(CBGenericLoss, sklearn.base.RegressorMix
         return uncertainty_gamma(y, weights)
 
 
-class CBAdditiveGenericCRegressor(CBGenericLoss, sklearn.base.RegressorMixin, IdentityLinkMixin):
+class CBAdditiveGenericRegressor(CBGenericLoss, sklearn.base.RegressorMixin, IdentityLinkMixin):
     """
     Additive regression mode allowing an arbitrary loss function to be
     minimized in each feature bin. This should be used for unconstrained target
@@ -806,7 +806,7 @@ class CBGenericClassifier(CBGenericLoss, sklearn.base.ClassifierMixin, LogitLink
 __all__ = [
     "CBMultiplicativeQuantileRegressor",
     "CBAdditiveQuantileRegressor",
-    "CBMultiplicativeGenericCRegressor",
-    "CBAdditiveGenericCRegressor",
+    "CBMultiplicativeGenericRegressor",
+    "CBAdditiveGenericRegressor",
     "CBGenericClassifier",
 ]
