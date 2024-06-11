@@ -281,3 +281,33 @@ def append_extension(file, extension):
         if not file.endswith(extension):
             file += extension
     return file
+
+
+def convert_cmap_to_plotly(cmap, pl_entries=255):
+    """Converting matplotlib colormaps to plotly colorscale.
+
+    Convert the format for the different way colormap is specified
+    in matplotlib and plotly.
+
+    Parameters
+    ----------
+
+    cmap : matplotlib.colors.LinearSegmentedColormap
+        color map from matplotlib
+
+    pl_entries : int, default=255
+        number of smoothly changing colours.
+
+    Returns
+    -------
+    pl_colorscale : list
+        list of colour orders and rgba values
+    """
+    h = 1.0 / (pl_entries - 1)
+    pl_colorscale = []
+
+    for k in range(pl_entries):
+        C = list(map(np.uint8, np.array(cmap(k * h)[:3]) * 255))
+        pl_colorscale.append([k * h, "rgb" + str((C[0], C[1], C[2]))])
+
+    return pl_colorscale

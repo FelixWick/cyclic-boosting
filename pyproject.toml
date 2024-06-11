@@ -24,6 +24,7 @@ pandas = ">=0.20.3"
 matplotlib = ">=1.5.1"
 hypothesis = ">=6.70.0"
 scipy = ">=1.10"
+plotly = "^5.22.0"
 
 
 [tool.poetry.group.dev.dependencies]

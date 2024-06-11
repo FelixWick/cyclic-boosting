@@ -1,6 +1,7 @@
 """
 Plots for the Cyclic Boosting family
 """
+
 from __future__ import absolute_import, division, print_function
 
 import contextlib
@@ -16,6 +17,7 @@ from cyclic_boosting import CBNBinomC
 
 from ._1dplots import plot_factor_1d
 from ._2dplots import plot_factor_2d
+from ._interactive_plots import plot_factor_3d
 from .plot_utils import append_extension, nbpy_style
 
 
@@ -312,6 +314,13 @@ def _plot_one_feature_group(plot_observer, grid_item, feature, binners=None, use
             n_bins_finite=plot_observer.n_feature_bins[feature.feature_group],
             feature=feature,
             grid_item=grid_item,
+        )
+
+    elif len(feature.feature_group) == 3:
+        # treatment of two-dimensional features
+        plot_factor_3d(
+            n_bins_finite=plot_observer.n_feature_bins[feature.feature_group],
+            feature=feature,
         )
 
     else:
