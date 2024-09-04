@@ -49,8 +49,8 @@ from cyclic_boosting.GBSregression import CBGBSRegressor
 from cyclic_boosting.generic_loss import (
     CBMultiplicativeQuantileRegressor,
     CBAdditiveQuantileRegressor,
-    CBMultiplicativeGenericCRegressor,
-    CBAdditiveGenericCRegressor,
+    CBMultiplicativeGenericRegressor,
+    CBAdditiveGenericRegressor,
     CBGenericClassifier,
 )
 from cyclic_boosting.pipelines import (
@@ -64,8 +64,8 @@ from cyclic_boosting.pipelines import (
     pipeline_CBGBSRegressor,
     pipeline_CBMultiplicativeQuantileRegressor,
     pipeline_CBAdditiveQuantileRegressor,
-    pipeline_CBMultiplicativeGenericCRegressor,
-    pipeline_CBAdditiveGenericCRegressor,
+    pipeline_CBMultiplicativeGenericRegressor,
+    pipeline_CBAdditiveGenericRegressor,
     pipeline_CBGenericClassifier,
 )
 
@@ -81,8 +81,8 @@ __all__ = [
     "CBGBSRegressor",
     "CBMultiplicativeQuantileRegressor",
     "CBAdditiveQuantileRegressor",
-    "CBMultiplicativeGenericCRegressor",
-    "CBAdditiveGenericCRegressor",
+    "CBMultiplicativeGenericRegressor",
+    "CBAdditiveGenericRegressor",
     "CBGenericClassifier",
     "pipeline_CBPoissonRegressor",
     "pipeline_CBNBinomRegressor",
@@ -94,8 +94,8 @@ __all__ = [
     "pipeline_CBGBSRegressor",
     "pipeline_CBMultiplicativeQuantileRegressor",
     "pipeline_CBAdditiveQuantileRegressor",
-    "pipeline_CBMultiplicativeGenericCRegressor",
-    "pipeline_CBAdditiveGenericCRegressor",
+    "pipeline_CBMultiplicativeGenericRegressor",
+    "pipeline_CBAdditiveGenericRegressor",
     "pipeline_CBGenericClassifier",
 ]
 

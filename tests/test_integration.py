@@ -17,8 +17,8 @@ from cyclic_boosting.pipelines import (
     pipeline_CBGBSRegressor,
     pipeline_CBMultiplicativeQuantileRegressor,
     pipeline_CBAdditiveQuantileRegressor,
-    pipeline_CBMultiplicativeGenericCRegressor,
-    pipeline_CBAdditiveGenericCRegressor,
+    pipeline_CBMultiplicativeGenericRegressor,
+    pipeline_CBAdditiveGenericRegressor,
     pipeline_CBGenericClassifier,
 )
 from cyclic_boosting.quantile_matching import (
@@ -851,7 +851,7 @@ def test_additive_regression_mad(is_plot, prepare_data, default_features, featur
         observers.PlottingObserver(iteration=-1),
     ]
 
-    CB_est = pipeline_CBAdditiveGenericCRegressor(
+    CB_est = pipeline_CBAdditiveGenericRegressor(
         feature_properties=feature_properties,
         costs=costs_mad,
         observers=plobs,
@@ -871,7 +871,7 @@ def test_additive_regression_mse(is_plot, prepare_data, default_features, featur
     X, y = prepare_data
     X = X[default_features]
 
-    CB_est = pipeline_CBAdditiveGenericCRegressor(
+    CB_est = pipeline_CBAdditiveGenericRegressor(
         feature_properties=feature_properties,
         costs=costs_mse,
     )
@@ -888,7 +888,7 @@ def test_multiplicative_regression_mad(is_plot, prepare_data, default_features, 
 
     X = X[default_features]
 
-    CB_est = pipeline_CBMultiplicativeGenericCRegressor(
+    CB_est = pipeline_CBMultiplicativeGenericRegressor(
         feature_properties=feature_properties,
         costs=costs_mad,
     )
@@ -905,7 +905,7 @@ def test_multiplicative_regression_mse(is_plot, prepare_data, default_features, 
 
     X = X[default_features]
 
-    CB_est = pipeline_CBMultiplicativeGenericCRegressor(
+    CB_est = pipeline_CBMultiplicativeGenericRegressor(
         feature_properties=feature_properties,
         costs=costs_mse,
     )
@@ -927,7 +927,7 @@ def test_multiplicative_regression_likelihood(is_plot, prepare_data, default_fea
     X, y = prepare_data
     X = X[default_features]
 
-    CB_est = pipeline_CBMultiplicativeGenericCRegressor(
+    CB_est = pipeline_CBMultiplicativeGenericRegressor(
         feature_properties=feature_properties,
         costs=poisson_likelihood,
     )
